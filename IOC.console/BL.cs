@@ -9,9 +9,9 @@ namespace IOC.console;
 public class BL
 {
     private IDAL _dal { get;set; }
-    public BL()
+    public BL(IDAL dal)
     {
-        _dal = DALFactory.GetDAL();
+        _dal = dal;
     }
     public List<Product> GetProducts()
     {
