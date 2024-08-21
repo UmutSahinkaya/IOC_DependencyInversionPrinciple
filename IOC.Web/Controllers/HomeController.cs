@@ -7,17 +7,18 @@ namespace IOC.Web.Controllers
     public class HomeController : Controller
     {
         //private readonly ISingletonDateService _singletonDateService;
-        private readonly IScopedDateService _scopedDateService;
+        //private readonly IScopedDateService _scopedDateService;
+        private readonly ITransientDateService _transientDateService;
 
-        public HomeController(IScopedDateService scopedDateService)
+        public HomeController(ITransientDateService transientDateService)
         {
-            _scopedDateService = scopedDateService;
+            _transientDateService = transientDateService;
         }
 
-        public IActionResult Index([FromServices]ISingletonDateService scopedDateService2)
+        public IActionResult Index([FromServices]ISingletonDateService transientDateService2)
         {
-            ViewBag.time1=_scopedDateService.GetDateTime.TimeOfDay.ToString();
-            ViewBag.time2= scopedDateService2.GetDateTime.TimeOfDay.ToString();
+            ViewBag.time1= _transientDateService.GetDateTime.TimeOfDay.ToString();
+            ViewBag.time2= transientDateService2.GetDateTime.TimeOfDay.ToString();
             return View();
         }
 
