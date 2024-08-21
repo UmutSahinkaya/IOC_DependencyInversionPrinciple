@@ -8,7 +8,7 @@ namespace IOC.console;
 
 public class BL
 {
-    private DAL _dal { get;set; }
+    private IDAL _dal { get;set; }
     public BL()
     {
         _dal = DALFactory.GetDAL();

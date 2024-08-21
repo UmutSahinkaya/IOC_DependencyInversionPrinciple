@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace IOC.console;
 
-public class DALFactory
+public interface IDAL
 {
-    public static IDAL GetDAL()
-    {
-        return new DAL();
-    }
+    List<Product> GetProducts();
 }
