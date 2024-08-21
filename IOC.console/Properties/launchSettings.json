@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "IOC.console": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
