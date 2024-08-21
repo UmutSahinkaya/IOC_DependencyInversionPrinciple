@@ -11,7 +11,7 @@ public class BL
     private DAL _dal { get;set; }
     public BL()
     {
-        _dal = new DAL();
+        _dal = DALFactory.GetDAL();
     }
     public List<Product> GetProducts()
     {
